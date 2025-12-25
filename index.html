@@ -997,7 +997,7 @@
                 localStorage.setItem('previousStatuses', JSON.stringify([...previousStatuses.entries()]));
             } catch (e) { console.error(e); }
         }
-        setInterval(checkForNewOrders, 5000);
+        setInterval(checkForNewOrders, 15000);
 
         document.addEventListener('DOMContentLoaded', () => {
             const init = localStorage.getItem('lastViewedRoute') || 'dashboard';
@@ -1007,3 +1007,4 @@
     </script>
 </body>
 </html>
+

@@ -470,7 +470,8 @@
         let customers = [];
         let lastViewedRoute = localStorage.getItem('lastViewedRoute') || 'dashboard';
         
-        const API_URL = 'https://goat-user.vercel.app/';
+        // FIXED URL: Removed /api from the end
+        const API_URL = 'https://goat-user.vercel.app';
         
         let seenOrderIds = new Set(JSON.parse(localStorage.getItem('seenOrderIds') || '[]'));
         let seenCancelledIds = new Set(JSON.parse(localStorage.getItem('seenCancelledIds') || '[]'));
@@ -818,6 +819,9 @@
             }
 
             try {
+                // Debugging: Log URLs being fetched
+                console.log(`Fetching: ${API_URL}/admin/livestock`);
+                
                 const [livestockRes, ordersRes, usersRes] = await Promise.all([
                     fetch(`${API_URL}/admin/livestock`).then(res => res.json()),
                     fetch(`${API_URL}/admin/orders`).then(res => res.json()),
@@ -1357,5 +1361,3 @@
     </script>
 </body>
 </html>
-
-

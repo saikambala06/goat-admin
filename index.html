@@ -471,7 +471,7 @@
         let lastViewedRoute = localStorage.getItem('lastViewedRoute') || 'dashboard';
         
         // FIXED URL: Removed /api from the end
-        const API_URL = 'https://goat-user.vercel.app';
+        const API_URL = 'https://goat-user.vercel.app/api';
         
         let seenOrderIds = new Set(JSON.parse(localStorage.getItem('seenOrderIds') || '[]'));
         let seenCancelledIds = new Set(JSON.parse(localStorage.getItem('seenCancelledIds') || '[]'));
@@ -1361,3 +1361,4 @@
     </script>
 </body>
 </html>
+
